@@ -1,5 +1,29 @@
 RealtimeProject1::Application.routes.draw do
-  get "movies/index"
+
+
+  get "movies/index" => "movies#index", as: 'home'
+  #get "movies/theatre/:id" => "movies#theatre_show", as: 'show'
+  get "movies/movie/:id" => "movies#movie_show", as: 'show_movie'
+  get "movies/theatre/:id" => "movies#theatre_show", as: 'show_theatre'
+
+  get "movies/:id/edit" => "movies#edit", as: 'edit_movie'
+  get "movies/theatre/:id/edit" => "movies#edit_theatre", as: 'edit_theatre'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

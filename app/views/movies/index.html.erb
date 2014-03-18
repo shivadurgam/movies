@@ -6,17 +6,49 @@
 			<th>Actor |</th>
 			<th>Actress</th>
 			<th></th>
-			
-
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
+	
 		<% @movies.each do |f| %>
 			<tr>
 				<td><%= f.name %></td>
 				<td><%= f.actor %></td>
 				<td><%= f.actress %></td>
-				<td><%= link_to 'Show'%></td>
+				<td><%= link_to ' --Show -- ', show_movie_path(f) %></td>
+				<td><%= link_to ' --Edit ', edit_movie_path(f) %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+
+</br></br>
+
+</br></br>
+
+<h1>Theatres</h1>
+<table>
+	<thead>
+		<tr>
+			<th>Theatre Name |</th>
+			<th>Place |</th>
+			<th>Time</th>
+			<th>Movie Id</th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @theatres.each do |f| %>
+			<tr>
+				<td><%= f.theatre_name %></td>
+				<td><%= f.place %></td>
+				<td><%= f.time %></td>
+				<td><%= f.movie_id%></td>
+				<td><%= link_to ' Show -- ', show_theatre_path(f) %></td>
+				<td><%= link_to ' --Edit ', edit_theatre_path(f) %></td>
 			</tr>
 		<% end %>
 	</tbody>
