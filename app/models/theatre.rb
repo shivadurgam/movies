@@ -1,5 +1,5 @@
 class Theatre < ActiveRecord::Base
-	has_one :movie
+	has_many :movie
 	belongs_to :movie
 
 end

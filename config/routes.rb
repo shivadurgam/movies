@@ -1,16 +1,37 @@
 RealtimeProject1::Application.routes.draw do
 
 
-  get "movies/index" => "movies#index", as: 'home'
-  #get "movies/theatre/:id" => "movies#theatre_show", as: 'show'
-  get "movies/movie/:id" => "movies#movie_show", as: 'show_movie'
-  get "movies/theatre/:id" => "movies#theatre_show", as: 'show_theatre'
+  get 'movies/index' => "movies#index", as: 'home'
+  
+  get 'movies/movie/:id' => "movies#show_movie", as: 'show_movie'
+  get 'movies/movie/:id/edit' => "movies#edit_movie", as: 'edit_movie'
+  patch 'movies/movie/:id' => "movies#update_movie"
+  put 'movies/movie/:id' => "movies#update_movie", as: 'movie'
 
-  get "movies/:id/edit" => "movies#edit", as: 'edit_movie'
-  get "movies/theatre/:id/edit" => "movies#edit_theatre", as: 'edit_theatre'
+  get 'movies/theatre/:id' => "movies#show_theatre", as: 'show_theatre'
+  get 'movies/theatre/:id/edit' => "movies#edit_theatre", as: 'edit_theatre'
+  patch 'movies/theatre/:id' => "movies#update_theatre"
+  put 'movies/theatre/:id' => "movies#update_theatre", as: 'theatre'
+
+  get 'movies/search' => "movies#search"
+  
+  
 
 
 
+ # get '/exams' => "exams#home", as: 'exams'
+  #post '/exams' => "exams#create"
+  #get '/exams/new' => "exams#new", as: 'new_exam'
+  #get '/exams/:id/edit' => "exams#edit", as: 'edit_exam'
+  #get '/exams/:id' => "exams#show", as: 'exam' 
+  #patch '/exams/:id' => "exams#update"
+  #put '/exams/:id' => "exams#update"
+  #delete '/exams/:id' => "exams#destroy"
+
+  #root :to => "exams#home"
+
+    
+ 
 
 
 
