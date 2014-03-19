@@ -13,7 +13,9 @@ RealtimeProject1::Application.routes.draw do
   patch 'movies/theatre/:id' => "movies#update_theatre"
   put 'movies/theatre/:id' => "movies#update_theatre", as: 'theatre'
 
-  get 'movies/search' => "movies#search"
+  get 'movies/search' => "movies#search_movie", as: 'search1'
+  get 'theatres/search' => "movies#search_theatre", as: 'search2'
+  #post 'movies/search' => "movies#search"
   
   
 

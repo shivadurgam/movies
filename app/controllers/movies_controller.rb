@@ -2,6 +2,7 @@ class MoviesController < ApplicationController
  
 before_action :set_movie, only: [:show_movie, :edit_movie, :update_movie]
 before_action :set_theatre, only: [:show_theatre, :edit_theatre, :update_theatre]
+
   def index
   	@movies = Movie.all
   	@theatres = Theatre.all
@@ -13,7 +14,6 @@ before_action :set_theatre, only: [:show_theatre, :edit_theatre, :update_theatre
 
   def edit_movie
   	@movie = Movie.find(params[:id])
-  	
   end
 
   def update_movie
@@ -52,8 +52,38 @@ before_action :set_theatre, only: [:show_theatre, :edit_theatre, :update_theatre
   	params.require(:theatre).permit(:theatre_name, :place, :time)
   end
 
-  def search
-  
+  def search_movie
+  	@search = Movie.search(params[:search])
+    if @search == []
+  		@search = 'No record found'
+  	end
+  		
   end
+
+  def search_theatre
+  	@search = Theatre.search(params[:search])
+  	 if @search == []
+  		@search = 'No record found'
+  	end
+  end
+
+
+
+
+
+
+#def next
+  	
+ # 	user = Account.find_by(username: params[:account][:username], password: params[:account][:password])
+
+    #@user3 = Account.select("username, password").where(username: params[:username], password: params[:login][:password])
+
+  #	if user == nil
+	#	@print = 'Invalid login: Please check your username and password'
+#	else
+#		@print = 'Login successful!!'
+#	end
+
+
 
 end
