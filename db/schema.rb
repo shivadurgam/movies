@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140318080407) do
+ActiveRecord::Schema.define(version: 20140319175144) do
 
   create_table "movies", force: true do |t|
     t.string   "name"
@@ -29,6 +29,17 @@ ActiveRecord::Schema.define(version: 20140318080407) do
     t.string   "movie_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "timings", force: true do |t|
+    t.string   "morning_show"
+    t.string   "matinee_show"
+    t.string   "first_show"
+    t.string   "second_show"
+    t.string   "theatre_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "theatre_name"
   end
 
 end

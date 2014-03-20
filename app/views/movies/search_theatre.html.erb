@@ -1,14 +1,19 @@
 </br></br>
 <h3 style="color:green">Here is what we found for you:</br></br></h3>
 
+      
+ <h4 style="color:blue">Your quey has yielded <%= pluralize(@search.count, "result") %>. </h4>
 
-
- 
-
-
-        <h4 style="color:purple"> <li><%=  @search %> </li>
+      <p class="one"> <h5 style="color:purple"> <ol>
+       <%  @search.each do |f| %>
+        <li>Theatre Name :<%= f.theatre_name %></br>
+        Location :		<%= f.place %></br>
+        show timings:	<%= f.time %></li></br>
+        <% end %></ol>
    		
-   	    </h4>
+   	 
+
+   	    <%= @search1 %>     </h5></p>
    
     
     

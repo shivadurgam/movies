@@ -13,10 +13,16 @@ RealtimeProject1::Application.routes.draw do
   patch 'movies/theatre/:id' => "movies#update_theatre"
   put 'movies/theatre/:id' => "movies#update_theatre", as: 'theatre'
 
+  
+ 
+  get 'movies/timing/:id' => "movies#show_timing", as: 'show_timing'
+  get 'movies/timing/:id/edit' => "movies#edit_timing", as: 'edit_timing'
+  patch 'movies/timing/:id' => "movies#update_timing"
+  put 'movies/timing/:id' => "movies#update_timing", as: 'timing'
+
   get 'movies/search' => "movies#search_movie", as: 'search1'
   get 'theatres/search' => "movies#search_theatre", as: 'search2'
-  #post 'movies/search' => "movies#search"
-  
+  get 'timings/search' => "movies#search_timing", as: 'search3'
   
 
 

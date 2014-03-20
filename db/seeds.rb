@@ -21,3 +21,12 @@ theatre5 = Theatre.create(theatre_name: 'Shanthi', place: 'Narayana guda', time:
 theatre6 = Theatre.create(theatre_name: 'Sri Krishna', place: 'Uppal', time: '12:00 PM, 3:00 PM, 7:00 PM, 10:00 PM	', movie_id: 2)
 theatre7 = Theatre.create(theatre_name: 'Raj Lakshmi', place: 'Uppal', time: '12:00 PM, 3:00 PM, 7:00 PM, 10:00 PM	', movie_id: 2)
 theatre8 = Theatre.create(theatre_name: 'Srinivasa', place: 'Tarnaka', time: '12:00 PM, 3:00 PM, 7:00 PM, 10:00 PM	', movie_id: 2)
+
+timing1 = Timing.create(theatre_name: "Aradhana", morning_show: 'AD', matinee_show: 'SVSC', first_show: 'One', second_show: '300', theatre_id: 1 )
+timing2 = Timing.create(theatre_name: "Srinivasa-Uppal", morning_show: 'Laddu Babu', matinee_show: 'SVSC', first_show: 'One', second_show: '300', theatre_id: 2 )
+timing3 = Timing.create(theatre_name: "Sandhya", morning_show: 'Yevadu', matinee_show: 'SVSC', first_show: 'One', second_show: '300', theatre_id: 3)
+timing4 = Timing.create(theatre_name: "Sudarshan", morning_show: 'SVSC', matinee_show: 'SVSC', first_show: 'One', second_show: '300', theatre_id: 4)
+timing5 = Timing.create(theatre_name: "Shanthi", morning_show: 'One', matinee_show: 'AD', first_show: 'One', second_show: 'Laddu Babu', theatre_id: 5)
+timing6 = Timing.create(theatre_name: "Sri Krishna", morning_show: 'AD', matinee_show: 'SVSC', first_show: 'Yevadu', second_show: '300', theatre_id: 6)
+timing7 = Timing.create(theatre_name: "Raj Lakshmi", morning_show: 'AD', matinee_show: 'SVSC', first_show: '300', second_show: '300', theatre_id: 7)
+timing8 = Timing.create(theatre_name: "Srinivasa-Tarnaka", morning_show: 'AD', matinee_show: 'One', first_show: 'One', second_show: '300', theatre_id: 8)

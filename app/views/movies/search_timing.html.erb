@@ -1,0 +1,26 @@
+</br></br>
+<h3 style="color:green">Here is what we found for you:</br></br></h3>
+
+
+
+  <h4 style="color:blue">Your quey has yielded <%= pluralize(@search.count, "result") %>. </h2>
+
+
+ <p class="one"><h5 style="color:purple"><ol><%  @search.each do |f| %>
+        					<li> Theatre Name :<%= f.theatre_name %></br>
+        						Morning show :<%= f.morning_show %></br>
+        							Matinee show :<%= f.matinee_show %></br>
+        					    First show :<%= f.first_show %></br>
+        						Second show :<%= f.second_show%> </li></br>
+        						<% end %></ol>
+   		<%= @search1 %>
+   	    </h5></p>
+   
+    
+    
+
+
+
+
+
+

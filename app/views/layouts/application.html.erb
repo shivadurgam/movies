@@ -5,37 +5,78 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+
+<!-- user defined -->
+<style>
+body {background-color:white; color:black;}
+
+p.ex {color:rgb(0,0,255);}
+
+p.one
+{
+border-style:solid;
+border-color:yellow;
+}
+div.fixed1
+{
+  position: fixed;
+
+}
+div.fixed
+{
+  position:fixed;
+  top:80px;
+  left:0px;
+}
+
+
+
+</style>
+
 </head>
+
+
 <body>
 
-</br></br>
-
-<p><h1 style="color:maroon"><center><strong><u>My Movies</u></strong></center></h1></p>
-Search movies in Your area:
-	
-
-<%= form_tag search1_path, method: :get do %>
-  <p>
-    <%= text_field_tag :search, params[:search], size: 40, placeholder: "you can use movie/actor/actress names" %> 
-    <%= submit_tag "Search Movies", :name => nil  %>
-  </p>
-<% end %>
 
 
 
+<div id="container" style="width:1500px">
 
-</br>
+  <div class="fixed1" id="header" style="background-color:#b0c4de;height:80px;width:1500px;float:center;">
+    <h1 style="margin-bottom:0;"><center>My Movies</center></h1></div>
 
-Search theatres here:
+  <div class="fixed" id="menu" style="background-color:#F5DEB3;height:1000px;width:200px;float:left;">
+   <p style="color:green"><h4><u>List of Movies:</u></h4></p>
+    <ol>
+      <li><%= link_to 'One', '/movies/movie/4' %></li>
+      <li><%= link_to 'AD', '/movies/movie/1' %></li>
+      <li><%= link_to 'SVSC', '/movies/movie/2' %></li>
+      <li><%= link_to 'Yevadu', '/movies/movie/3' %></li>
+      <li><%= link_to 'Laddu Babu', '/movies/movie/5' %></li>
+      <li><%= link_to '300 (English-3D)', '/movies/movie/6' %></li>
+    </ol> 
+    <p>List of Theatres:</p>
+    <ol>
+      <li><%= link_to 'Aradhana', '/movies/timing/1' %></li>
+      <li><%= link_to 'Srinivasa-Uppal', '/movies/timing/2' %></li>
+      <li><%= link_to 'Sandhya', '/movies/timing/3' %></li>
+      <li><%= link_to 'Sudarshan', '/movies/timing/4' %></li>
+      <li><%= link_to 'Shanthi', '/movies/timing/5' %></li>
+      <li><%= link_to 'Sri Krishna', '/movies/timing/6' %></li>
+      <li><%= link_to 'Raj Lakshmi', '/movies/timing/7' %></li>
+      <li><%= link_to 'Srinivasa-Tarnaka', '/movies/timing/8' %></li>
+    </ol> 
+ </div>
 
-<%= form_tag search2_path, method: :get do %>
-  <p>
-    <%= text_field_tag :search, params[:search], size: 40, placeholder: "you can enter theatre name/location" %>
-    <%= submit_tag "Search Theatres", :name => nil %>
-  </p>
-<% end %>
+  <div id="content" style="background-color:white;height:1000px;width:1200px;float:right;margin-top:100px;">
 
-<%= yield %>
+    <%= yield %>
+  </div>
+
+
+
+
 
 </body>
 </html>
