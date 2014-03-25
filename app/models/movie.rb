@@ -6,14 +6,14 @@ class Movie < ActiveRecord::Base
 
 
 
-def self.search(search)
-  if search
-    find(:all, :conditions => ['name LIKE ? OR actor LIKE ? OR actress LIKE ?', "#{search}%", "#{search}%", "#{search}%"])
-  
-  else
-    find(:all)
-  end
-end
+	def self.search(search)
+		if search
+			find(:all, :conditions => ['name LIKE ? OR actor LIKE ? OR actress LIKE ?', "#{search}%", "#{search}%", "#{search}%"])
+			
+		else
+			find(:all)
+		end
+	end
 
 
 end

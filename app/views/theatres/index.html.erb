@@ -1,0 +1,46 @@
+</br></br>
+
+
+
+Search theatre by name/location
+<%= form_tag search_theatres_path, method: :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search], size: 35, placeholder: "you can enter theatre name/location" %>
+    <%= submit_tag "Search Theatres", :name => nil %>
+  </p>
+<% end %>
+
+
+
+</br></br>
+
+<h2>Theatres</h2><%= link_to '(Create new)', new_theatre_path %>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Theatre Name </th>
+			<th>Place </th>
+			<th>Time</th>
+			<th>Movie Id</th>
+			<th>Show Details</th>
+			<th>Edit Details</th>
+			<th>Delete </th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @theatres.each do |f| %>
+			<tr>
+				<td><%= f.theatre_name %></td>
+				<td><%= f.place %></td>
+				<td><%= f.time %></td>
+				<td><%= f.movie_id%></td>
+				<td><%= link_to ' Show  ', theatre_path(f) %></td>
+				<td><%= link_to ' Edit ', edit_theatre_path(f) %></td>
+				<td><%= link_to ' Destroy ', f, method: :delete, data: {confirm: "Are you sure?"} %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table> 
+
+</br></br>
+

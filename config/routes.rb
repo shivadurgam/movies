@@ -1,28 +1,16 @@
 RealtimeProject1::Application.routes.draw do
 
 
-  get 'movies/index' => "movies#index", as: 'home'
   
-  get 'movies/movie/:id' => "movies#show_movie", as: 'show_movie'
-  get 'movies/movie/:id/edit' => "movies#edit_movie", as: 'edit_movie'
-  patch 'movies/movie/:id' => "movies#update_movie"
-  put 'movies/movie/:id' => "movies#update_movie", as: 'movie'
-
-  get 'movies/theatre/:id' => "movies#show_theatre", as: 'show_theatre'
-  get 'movies/theatre/:id/edit' => "movies#edit_theatre", as: 'edit_theatre'
-  patch 'movies/theatre/:id' => "movies#update_theatre"
-  put 'movies/theatre/:id' => "movies#update_theatre", as: 'theatre'
-
-  
+  devise_for :users
+  resources :movies, :theatres, :timings do
+    collection do
+      get :search
+    end
+  end
  
-  get 'movies/timing/:id' => "movies#show_timing", as: 'show_timing'
-  get 'movies/timing/:id/edit' => "movies#edit_timing", as: 'edit_timing'
-  patch 'movies/timing/:id' => "movies#update_timing"
-  put 'movies/timing/:id' => "movies#update_timing", as: 'timing'
 
-  get 'movies/search' => "movies#search_movie", as: 'search1'
-  get 'theatres/search' => "movies#search_theatre", as: 'search2'
-  get 'timings/search' => "movies#search_timing", as: 'search3'
+  
   
 
 

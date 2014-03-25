@@ -1,0 +1,43 @@
+
+</br></br>
+
+
+Search theatre-timings and shows
+<%= form_tag search_timings_path, method: :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search], size: 35, placeholder: "Enter any theatre name" %>
+    <%= submit_tag "Search Timings", :name => nil %>
+  </p>
+<% end %></br></br>
+
+
+<h2>Timings</h2><%= link_to '(Create new)', new_timing_path %>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			
+			<th>Theatre id</th>
+			<th>Theatre name</th>
+			<th>Show Details</th>
+			<th>Edit Details</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @timings.each do |f| %>
+			<tr>
+			
+			    <th><%= f.theatre_id %></th>
+			    <th><%= f.theatre_name %></th>
+				<td><%= link_to ' Show  ', timing_path(f) %></td>
+				<td><%= link_to ' Edit ', edit_timing_path(f) %></td>
+				<td><%= link_to ' Destroy ', f, method: :delete, data: {confirm: "Are you sure?"} %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+</br></br></br>
+
+
+

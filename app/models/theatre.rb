@@ -5,13 +5,13 @@ class Theatre < ActiveRecord::Base
 
 
 
-def self.search(search)
-  if search
-    find(:all, :conditions => ['theatre_name LIKE ? OR place LIKE ? OR time LIKE ?', "#{search}%", "#{search}%", "#{search}%"])
-  
-  else
-    find(:all)
-  end
-end
+	def self.search(search)
+		if search
+			find(:all, :conditions => ['theatre_name LIKE ? OR place LIKE ? OR time LIKE ?', "#{search}%", "#{search}%", "#{search}%"])
+
+		else
+			find(:all)
+		end
+	end
 
 end

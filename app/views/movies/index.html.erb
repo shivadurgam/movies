@@ -1,41 +1,27 @@
-</br></br>
+</br></br> 
 Search movies by name/actor/actress
-<%= form_tag search1_path, method: :get do %>
+<%= form_tag search_movies_path, method: :get do %>
   <p>
-    <%= text_field_tag :search_cinema, params[:search], size: 40, placeholder: "you can use movie/actor/actress names" %> 
+    <%= text_field_tag :search, params[:search], size: 35, placeholder: "you can use movie/actor/actress names" %> 
     <%= submit_tag "Search Movies", :name => nil  %>
   </p>
 <% end %>
 
 
 
-Search theatre details by name/place
-<%= form_tag search2_path, method: :get do %>
-  <p>
-    <%= text_field_tag :search_hall, params[:search], size: 40, placeholder: "you can enter theatre name/location" %>
-    <%= submit_tag "Search Theatres", :name => nil %>
-  </p>
-<% end %>
+</br></br>
 
-
-
-Search theatre and its respective movies
-<%= form_tag search3_path, method: :get do %>
-  <p>
-    <%= text_field_tag :search_time, params[:search], size: 40, placeholder: "Enter any theatre name" %>
-    <%= submit_tag "Search Timings", :name => nil %>
-  </p>
-<% end %>
-
-<h2>Movies</h2>
+<h2>Movies</h2><%= link_to '(Create new)', new_movie_path %>
 <table class="table table-striped">
 	<thead>
-		<tr class="active">
+		<tr>
 			<th>Movie Name </th>
 			<th>Actor </th>
 			<th>Actress</th>
-			<th>Show movies</th>
-			<th>Edit movies</th>
+			<th>Show movie</th>
+			<th>Edit movie</th>
+			<th>Delete movie</th>
+
 		</tr>
 	</thead>
 	<tbody>
@@ -45,72 +31,14 @@ Search theatre and its respective movies
 				<td><%= f.name %></td>
 				<td><%= f.actor %></td>
 				<td><%= f.actress %></td>
-				<td><%= link_to ' Show  ', show_movie_path(f) %></td>
+				<td><%= link_to ' Show  ', movie_path(f) %></td>
 				<td><%= link_to ' Edit ', edit_movie_path(f) %></td>
+				<td><%= link_to 'Destroy', f, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 			</tr>
 		<% end %>
 	</tbody>
 </table>
 
  
-
-
-
-
-
-</br>
-
-<h1>Theatres</h1>
-<table class="table table-bordered">
-	<thead>
-		<tr>
-			<th>Theatre Name </th>
-			<th>Place </th>
-			<th>Time</th>
-			<th>Movie Id</th>
-			<th>Show Details</th>
-			<th>Edit Details</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @theatres.each do |f| %>
-			<tr>
-				<td><%= f.theatre_name %></td>
-				<td><%= f.place %></td>
-				<td><%= f.time %></td>
-				<td><%= f.movie_id%></td>
-				<td><%= link_to ' Show  ', show_theatre_path(f) %></td>
-				<td><%= link_to ' Edit ', edit_theatre_path(f) %></td>
-			</tr>
-		<% end %>
-	</tbody>
-</table> 
-
-</br></br>
-
-<h1>Theatre - Shows</h1>
-<table class="table table-condensed">
-	<thead>
-		<tr>
-			
-			<th>Theatre id</th>
-			<th>Theatre name</th>
-			<th>Theatre shows</th>
-			<th>Edit </th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @timings.each do |f| %>
-			<tr>
-			
-			    <th><%= f.theatre_id %></th>
-			    <th><%= f.theatre_name %></th>
-				<td><%= link_to ' Show  ', show_timing_path(f) %></td>
-				<td><%= link_to ' Edit ', edit_timing_path(f) %></td>
-			</tr>
-		<% end %>
-	</tbody>
-</table>
-
 
 
