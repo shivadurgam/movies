@@ -1,0 +1,14 @@
+<% if @timing.errors.any? %>
+  <div id="error_explanation" style="color:red">
+    <h2><%= pluralize(@timing.errors.count, "error") %> prohibited this post from being saved:</h2>
+ 
+    <ol>
+    <% @timing.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ol>
+  </div>
+  
+<% end %>
+
+		
