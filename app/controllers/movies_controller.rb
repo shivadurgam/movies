@@ -6,6 +6,7 @@
      @movies = Movie.all
      @theatres = Theatre.all
      @timings = Timing.all
+  
     end
 
    def show
@@ -21,7 +22,6 @@
       redirect_to movies_path
     end
   end
-   
 
    def edit
    end

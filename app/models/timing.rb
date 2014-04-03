@@ -7,7 +7,7 @@ class Timing < ActiveRecord::Base
 
 	validates_presence_of :morning_show, :matinee_show, :first_show, :second_show, :message => ": cant be blank"
 	validates_length_of  :morning_show, :matinee_show, :first_show, :second_show, :in => 2..20, :message => ": should have minimum 2 and maximum 20 letters"
-	validates_format_of  :morning_show, :matinee_show, :first_show, :second_show, :with =>  /\A[a-zA-Z0-9]+\z/, :excluded_chars => %w('then', 'an'), :message => ": only alphanumerics"
+	validates_format_of  :morning_show, :matinee_show, :first_show, :second_show, :with =>  /\A[a-zA-Z0-9\s]+\z/, :excluded_chars => %w('then', 'an'), :message => ": only alphanumerics"
 
 
 	def self.search(search)

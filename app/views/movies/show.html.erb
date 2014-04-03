@@ -1,5 +1,5 @@
-
-
+<% provide(:title, 'Show') %>
+<div class="transbox">
 <p> Movie Name: <%= @movie.name %> </p>
 <p> Actor : <%= @movie.actor %> </p>
 <p> Actress : <%= @movie.actress %> </p>
@@ -10,9 +10,13 @@
 
 
 
+&nbsp&nbsp&nbsp<%= link_to 'Home', movies_path %>
+
+</div>
 
 
 
 
 
-<%= link_to 'Home', movies_path %>
+
+

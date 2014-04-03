@@ -8,7 +8,7 @@ class Theatre < ActiveRecord::Base
 
 	validates_presence_of :theatre_name, :place, :time, :message => ": cant be blank"
 	validates_length_of :theatre_name, :place, :time, :in => 2..20, :message => ": should have minimum 2 and maximum 20 letters"
-	validates_format_of :theatre_name, :place, :time, :with =>  /\A[a-zA-Z0-9]+\z/, :excluded_chars => %w('then', 'an'), :message => ": only alphanumerics"
+	validates_format_of :theatre_name, :place, :time, :with =>  /\A[a-zA-Z0-9\s]+\z/, :excluded_chars => %w('then', 'an'), :message => ": only alphanumerics"
 
 
 	def self.search(search)

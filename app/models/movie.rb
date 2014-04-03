@@ -2,6 +2,7 @@ class Movie < ActiveRecord::Base
 	has_many :theatres
 	belongs_to :theatre
 
+	before_validation :display_msg
 	after_validation :show_msg
 
 	#before_save :capitalize_first_letter
@@ -16,8 +17,8 @@ class Movie < ActiveRecord::Base
 
 	validates_presence_of :name, :actor, :actress, :message => ": cant be blank"
 	validates_length_of :name, :actor, :actress, :in => 2..20, :message => ": should have minimum 2 and maximum 20 letters"
-	validates_format_of :actor, :actress, :with =>  /\A[a-zA-Z]+\Z/, :excluded_chars => %w('then', 'an'), :message => ": only alphabets"
-	validates_format_of :name, :with =>  /\A[a-zA-Z0-9]+\z/, :message => ": only alphanumerics"
+	validates_format_of :actor, :actress, :with =>  /\A[a-zA-Z\s]+\Z/, :excluded_chars => %w('then', 'an'), :message => ": only alphabets"
+	validates_format_of :name, :with =>  /\A[a-zA-Z0-9\s]+\z/, :message => ": only alphanumerics"
 
 	def self.search(search)
 		if search
@@ -28,8 +29,14 @@ class Movie < ActiveRecord::Base
 		end
 	end
 
+	private
 	def show_msg
 		puts "validation completed"
+	end
+
+	def display_msg
+	
+		puts "validation started"
 	end
 
 	#private
