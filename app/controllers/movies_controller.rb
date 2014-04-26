@@ -2,6 +2,12 @@
    
     before_action :set_movie, only: [:show, :edit, :update, :destroy]
 
+  def my_embeddable_widget
+    response.headers.delete "X-Frame-Options"
+    render
+  end
+
+
     def index
      @movies = Movie.all
      @theatres = Theatre.all
@@ -56,6 +62,7 @@ def search
   @search1 = 'No record found'
  end
 end
+
 
 
 

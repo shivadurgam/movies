@@ -39,6 +39,8 @@ class Movie < ActiveRecord::Base
 		puts "validation started"
 	end
 
+	
+
 	#private
 	#def capitalize_first_letter
 	#	self.name = self.name.upcase

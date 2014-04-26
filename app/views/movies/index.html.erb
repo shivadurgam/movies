@@ -2,10 +2,10 @@
 </br></br> 
 Search movies by name/actor/actress
 <%= form_tag search_movies_path, method: :get do %>
-  <p>
-    <%= text_field_tag :search, params[:search], size: 35, placeholder: "you can use movie/actor/actress names" %> 
-    <%= submit_tag "Search Movies", :name => nil  %>
-  </p>
+<p>
+	<%= text_field_tag :search, params[:search], size: 35, placeholder: "you can use movie/actor/actress names" %> 
+	<%= submit_tag "Search Movies", :name => nil  %>
+</p>
 <% end %>
 
 
@@ -26,16 +26,16 @@ Search movies by name/actor/actress
 		</tr>
 	</thead>
 	<tbody>
-	
+		
 		<% @movies.each do |f| %>
-			<tr>
-				<td><%= f.name %></td>
-				<td><%= f.actor %></td>
-				<td><%= f.actress %></td>
-				<td><%= link_to ' Show  ', movie_path(f) %></td>
-				<td><%= link_to ' Edit ', edit_movie_path(f) %></td>
-				<td><%= link_to 'Destroy', f, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-			</tr>
+		<tr>
+			<td><%= f.name %></td>
+			<td><%= f.actor %></td>
+			<td><%= f.actress %></td>
+			<td><%= link_to ' Show  ', movie_path(f) %></td>
+			<td><%= link_to ' Edit ', edit_movie_path(f) %></td>
+			<td><%= link_to 'Destroy', f, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		</tr>
 		<% end %>
 	</tbody>
 </table>
@@ -43,6 +43,6 @@ Search movies by name/actor/actress
 
 
 
- 
+
 
 
