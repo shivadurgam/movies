@@ -12,8 +12,8 @@ class Movie < ActiveRecord::Base
 		t.actress = t.actress.upcase.titleize
 	end
 
-	
-	
+
+
 
 	validates_presence_of :name, :actor, :actress, :message => ": cant be blank"
 	validates_length_of :name, :actor, :actress, :in => 2..20, :message => ": should have minimum 2 and maximum 20 letters"
@@ -35,7 +35,7 @@ class Movie < ActiveRecord::Base
 	end
 
 	def display_msg
-	
+
 		puts "validation started"
 	end
 
@@ -47,7 +47,7 @@ class Movie < ActiveRecord::Base
 		#new_string = string.slice(0,1).capitalize + string.slice(1..-1)
 	#end
 
-  
+
 
 
 end

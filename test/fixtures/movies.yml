@@ -1,11 +1,4 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyString
-  actor: MyString
-  actress: MyString
-
-two:
-  name: MyString
-  actor: MyString
-  actress: MyString
+ad:
+  name: 'atharintinki daredi'
+  actor: 'Pawan Kalyan'
+  actress: 'Samantha'

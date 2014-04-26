@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class TimingsControllerTest < ActionController::TestCase
+=begin
   test "should get index" do
     get :index
     assert_response :success
@@ -25,5 +26,5 @@ class TimingsControllerTest < ActionController::TestCase
     get :search
     assert_response :success
   end
-
+=end
 end
