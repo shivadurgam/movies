@@ -1,11 +1,14 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+ad:
+  name: 'attarintiki daredi'
+  actor: 'pawan kalyan'
+  actress: 'Samantha'
 
-one:
-  name: MyString
-  actor: MyString
-  actress: MyString
+rg:
+  name: 'race gurram'
+  actor: 'allu arjun'
+  actress: 'sruthi hasan'
 
-two:
-  name: MyString
-  actor: MyString
-  actress: MyString
+lb:
+  name: 'laddu babu'
+  actor: 'allari naresh'
+  actress: 'purna'
