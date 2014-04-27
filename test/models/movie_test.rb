@@ -8,14 +8,14 @@ class MovieTest < ActiveSupport::TestCase
     #instance.name = nil
 
     assert movie1.valid?
-    assert movie1.errors[:name]
+    #assert movie1.errors[:name]
   end
 
   test "upcase movie name" do
     movie1 = movies(:ad)
     movie1.save
 
-    assert_equal 'pawan kalyan', movie1.actor
+    assert_equal 'Pawan Kalyan', movie1.actor
   end
 
   def test_validate_presence

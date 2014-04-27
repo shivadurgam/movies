@@ -1,51 +1,52 @@
   class MoviesController < ApplicationController
-   
-    before_action :set_movie, only: [:show, :edit, :update, :destroy]
 
-  def my_embeddable_widget
-    response.headers.delete "X-Frame-Options"
-    render
-  end
+    before_action :set_movie, only: [:show, :edit, :update, :destroy]
+    before_filter :allow_iframe_requests
+
+
+    def allow_iframe_requests
+      response.headers.delete('X-Frame-Options')
+    end
 
 
     def index
      @movies = Movie.all
      @theatres = Theatre.all
      @timings = Timing.all
-  
-    end
+
+   end
 
    def show
    end
 
    def new
     @movie = Movie.new
-  end
-
-  def create
-    @movie = Movie.new(movie_params)
-    if @movie.save
-      redirect_to movies_path
-    end
-  end
-
-   def edit
    end
 
-   def update
-     if @movie.update_attributes(movie_params)
-      redirect_to movies_path
-    end	
+   def create
+     @movie = Movie.new(movie_params)
+     if @movie.save
+       redirect_to movies_path
+     end
+   end
+
+  def edit
   end
 
-  def destroy
-    if @movie.destroy
-      redirect_to movies_path
-    end
+  def update
+   if @movie.update_attributes(movie_params)
+    redirect_to movies_path
+  end	
+end
+
+def destroy
+  if @movie.destroy
+    redirect_to movies_path
   end
+end
 
 
-  
+
 
 
 def set_movie
@@ -60,7 +61,7 @@ def search
  @search = Movie.search(params[:search])
  if @search == []
   @search1 = 'No record found'
- end
+end
 end
 
 
