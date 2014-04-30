@@ -17,8 +17,6 @@
  <iframe id="frame1" name="iframe_2" style="position:absolute;top: 100px;left: 700px;float: right;width: 600px;height: 400px;margin: 30px 50px;border: 1px solid black;opacity: 1;"></iframe>
 
 
-
-
 <% if @movie.id == 1 %> 
 	<%= link_to 'view review here', "http://entertainment.oneindia.in/telugu/movies/attharintiki-daaredhi/review.html" , { :target => "iframe_2" } %>
 
@@ -33,7 +31,7 @@
 
 <% elsif @movie.id == 3 %>
 	<%= link_to 'view review here', "http://entertainment.oneindia.in/telugu/movies/yevadu/review.html" , { :target => "iframe_2" } %>
-	<% end %>
+<% end %>
 
 	
 

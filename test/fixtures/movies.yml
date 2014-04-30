@@ -1,5 +1,5 @@
 ad:
-  name: 'attarintiki daredi'
+  name:
   actor: 'pawan kalyan'
   actress: 'Samantha'
 
@@ -12,3 +12,4 @@ lb:
   name: 'laddu babu'
   actor: 'allari naresh'
   actress: 'purna'
+
